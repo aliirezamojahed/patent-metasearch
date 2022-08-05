@@ -1,0 +1,131 @@
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'arial', sans-serif;
+}
+
+[data-theme="dark"] {
+  --background-color: #121212;
+  --text-color: #eee;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.theme-icon {
+    /* position: relative; */
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+#theme-switcher {
+    /* position: absolute; */
+    /* margin-top: 20px;
+    margin-left: 20px; */
+    width: 30px;
+    z-index: 10;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.invert {
+    filter: invert(100%);
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .main {
+    width: 580px;
+    margin: 0 20px;
+    margin-bottom: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+/* .query-dark[type="text"] {
+    background-color: #121212a1;
+} */
+
+section .main .search-box {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+section .main .search-box .query {
+    background-color: var(--background-color);
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    color: var(--text-color);
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 45px;
+}
+
+section .main .search-box .icons {
+    background-color: var(--background-color);
+    border: 1px solid #ccc;
+    border-left: 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 10px 13px;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+/* .search-btn {
+    margin: 0 5px;
+    margin-top: 20px;
+    margin-left: 40%;
+    padding: 12px 20px;
+    color: #555;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    outline: none;
+}
+
+.search-btn:hover {
+    border: 1px solid #ccc;
+} */
+
+#search-icon {
+    max-width: 20px;
+}
+
+.subtitle {
+    text-align: center;
+    margin-top: 20px;
+}

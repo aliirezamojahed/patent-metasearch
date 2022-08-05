@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <title>Patent Metasearch</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/home_page.css' %}">
+    </head>
+    <body>
+        <div class="theme-icon">
+            <img src="{% static 'image/light.png' %}" id="theme-switcher">
+        </div>
+        <section>
+            <div class="main">
+                <div class="title">
+                    <h1>Patent Metasearch</h1>
+                </div>
+                <form action="{% url 'search_results' %}" class="search-box" method="get">
+                    <input name="q" type="text" class="query query-dark" placeholder="Search...">
+                    <button class="icons">
+                        <img src="{% static 'image/search.png' %}" id="search-icon">
+                    </button>
+                </form>
+                <div class="subtitle">
+                    <p>Search once, Get various search engines results.</p>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script src="{% static 'js/home_page.js' %}"></script>
+</html>

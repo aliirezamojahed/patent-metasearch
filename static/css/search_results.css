@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'arial', sans-serif;
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #eee;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.invert {
+    filter: invert(100%);
+}
+
+.theme-icon {
+    /* position: relative; */
+    float: right;
+    margin-right: 20px;
+}
+
+#theme-switcher {
+    /* position: absolute; */
+    /* margin-top: 20px;
+    margin-left: 20px; */
+    width: 30px;
+    z-index: 10;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.topbar {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    float: left;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.search-box-dark[type="text"] {
+    background-color: #121212;
+}
+
+.search-box {
+    position: relative;
+    width: 40%;
+    /* margin: 20px 150px; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+}
+
+.search-box .query {
+    background-color: var(--background-color);
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    outline: none;
+    color: var(--text-color);
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 55px;
+}
+
+.search-box .icons {
+    background-color: var(--background-color);
+    border: 1px solid #ccc;
+    border-left: 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 10px 13px;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+.search-result {
+    max-width: 50%;
+    margin-top: 50px;
+    margin-left: 150px;
+}
+
+.search-result .description {
+    margin-top: 5px;
+}
+
+.search-box .icons img {
+    max-width: 25px;
+}
+
+.pagination {
+    list-style: none;
+    margin-top: 50px;
+    margin-left: 250px;
+}
+
+.pagination li {
+    display: inline-block;
+    margin-left: 5px;
+  }
+  
+.pagination a {
+    color: var(--text-color);
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+footer {
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+    padding-top: 80px;
+}

@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head en="UTF-8">
+        <meta charset="UTF-8">
+        <title>{{ object_list }} - Patent Metasearch</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/search_results.css' %}">
+    </head>
+    <body>
+        <div class="topbar">
+            <div class="theme-icon">
+                <img src="{% static 'image/light.png' %}" id="theme-switcher">
+            </div>
+            <div class="logo">
+                <h2>Patent<br>Metasearch</h2>
+            </div>
+            <form action="{% url 'search_results' %}" class="search-box" method="get">
+                    <input name="q" type="text" class="query query-dark" value="{{ object_list }}">
+                    <button class="icons">
+                        <img src="{% static 'image/search.png' %}" id="search-icon">
+                    </button>
+                </form>
+        </div>
+        {% for i in '1234567890' %}
+        <div class="search-result">
+            <h1 class="title">
+                <a href="#">Lorem ipsum dolor sit amet, consectetur</a>
+            </h1>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat est velit egestas dui id ornare arcu. Consectetur libero id faucibus nisl tincidunt eget. A iaculis at erat pellentesque adipiscing. Ac feugiat sed lectus vestibulum mattis.</p>
+        </div>
+        {% endfor %}
+        <div>
+        <ul class="pagination">
+            <li>
+                <a href="#">«</a>
+            </li>
+            <li>
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">»</a>
+            </li>
+        </ul>
+        </div>
+        <footer>
+            
+        </footer>
+    </body>
+    <script src="{% static 'js/search_results.js' %}" type="text/javascript"></script>
+</html>
