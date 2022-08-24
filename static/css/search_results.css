@@ -13,10 +13,12 @@
 body {
     background-color: var(--background-color);
     color: var(--text-color);
+    transition: 0.2s;
 }
 
 .invert {
     filter: invert(100%);
+    /* transition: 0.2s; */
 }
 
 .theme-icon {
@@ -33,11 +35,12 @@ body {
     z-index: 10;
     pointer-events: all;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .topbar {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+    /* padding-bottom: 10px; */
     margin-bottom: 20px;
 }
 
@@ -45,6 +48,12 @@ body {
     float: left;
     margin-left: 20px;
     text-align: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: 0.2s;
 }
 
 .search-box-dark[type="text"] {
@@ -64,35 +73,83 @@ body {
     background-color: var(--background-color);
     width: 100%;
     padding: 13px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     outline: none;
     color: var(--text-color);
     font-size: 16px;
     border-radius: 5px;
     padding-left: 15px;
     padding-right: 55px;
+    transition: 0.2s;
+}
+
+.search-box .query:focus {
+    border: 2px solid #0b66ce;
 }
 
 .search-box .icons {
     background-color: var(--background-color);
-    border: 1px solid #ccc;
-    border-left: 0px;
+    border: 0px;
     position: absolute;
     top: 0;
     right: 0;
-    height: 100%;
+    height: 90%;
     display: flex;
     /* justify-content: space-between; */
-    padding: 10px 13px;
+    /* padding: 10px 13px; */
+    /* margin: 10px 5px; */
+    margin-top: 2px;
+    margin-right: 12px;
     align-items: center;
     cursor: pointer;
-    border-radius: 0 5px 5px 0;
+    /* border-radius: 0 5px 5px 0; */
+    /* z-index: 10; */
+    transition: 0.2s;
 }
+
+/* .topbar .sources {
+    display: inline-block;
+    margin-left: 200px;
+}
+
+.topbar .sources li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.topbar .sources .active {
+    padding-bottom: 4px;
+    border-bottom: 3px solid #0047ee;
+    font-weight: bold;
+} */
 
 .search-result {
     max-width: 50%;
     margin-top: 50px;
     margin-left: 150px;
+}
+
+.search-result .title {
+    font-size: 17pt;
+}
+
+.search-result .title a {
+    text-decoration: none;
+    color: rgb(0, 100, 215);
+}
+
+.search-result .title a:visited {
+    text-decoration: none;
+    color: rgb(151, 12, 167);
+}
+
+.search-result .title a:hover {
+    text-decoration: underline;
+}
+
+.search-result .search-engine {
+    font-weight: 600;
+    color: rgb(11, 147, 7);
 }
 
 .search-result .description {
@@ -106,7 +163,7 @@ body {
 .pagination {
     list-style: none;
     margin-top: 50px;
-    margin-left: 250px;
+    margin-left: 150px;
 }
 
 .pagination li {
@@ -121,8 +178,15 @@ body {
     text-decoration: none;
 }
 
+.pagination .active-page {
+    cursor: default;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    /* color: rgb(219, 15, 15); */
+}
+
 footer {
-    border-top: 1px solid #ccc;
+    border-top: 2px solid #ccc;
     margin-top: 40px;
     padding-top: 80px;
 }
