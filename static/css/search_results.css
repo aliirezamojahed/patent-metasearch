@@ -52,12 +52,13 @@ body {
 
 .logo a {
     text-decoration: none;
+    font-family: 'Montserrat', 'arial', sans-serif;
     color: var(--text-color);
     transition: 0.2s;
 }
 
 .search-box-dark[type="text"] {
-    background-color: #121212;
+    background-color: #414141;
 }
 
 .search-box {
