@@ -5,6 +5,8 @@ from django.shortcuts import render
 from .models import UserQuery, Result
 
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -23,7 +25,10 @@ class HomePageView(TemplateView):
 def search_results(request):
     
     def google_patents():
-        driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
+        driver = webdriver.Chrome(
+            service=Service(ChromeDriverManager().install()), 
+            options=options
+        )
         driver.get('https://patents.google.com/?q=' + query.replace(' ', '+'))
         page_source = driver.page_source
         soup = BeautifulSoup(page_source, 'lxml')
@@ -45,7 +50,10 @@ def search_results(request):
         return {'google_patents': results}
 
     def lens():
-        driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
+        driver = webdriver.Chrome(
+            service=Service(ChromeDriverManager().install()), 
+            options=options
+        )
         driver.get('https://www.lens.org/lens/search/patent/list?preview=true&q=' + query.replace(' ', '+'))
         _ = WebDriverWait(driver, 15).until(
             EC.presence_of_element_located((By.CLASS_NAME, 'result-snippet'))
@@ -71,7 +79,10 @@ def search_results(request):
 
 
     def patentscope():
-        driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
+        driver = webdriver.Chrome(
+            service=Service(ChromeDriverManager().install()), 
+            options=options
+        )
         driver.get('https://patentscope.wipo.int/')
         search_input = driver.find_element(
             by=By.ID, 
@@ -101,13 +112,13 @@ def search_results(request):
     # Driver configurations
     # CHROMEDRIVER_PATH = 'C:/SeleniumDrivers/chromedriver.exe'
     options = Options()  
-    options.binary_location = os.environ.get('GOOGLE_CHROME_BIN')
+    # options.binary_location = os.environ.get('GOOGLE_CHROME_BIN')
     options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--remote-debugging-port=9222')
-    options.add_argument('--incognito')
-    CHROMEDRIVER_PATH = str(os.environ.get('CHROMEDRIVER_PATH'))
+    # options.add_argument('--disable-gpu')
+    # options.add_argument('--no-sandbox')
+    # options.add_argument('--remote-debugging-port=9222')
+    # options.add_argument('--incognito')
+    # CHROMEDRIVER_PATH = str(os.environ.get('CHROMEDRIVER_PATH'))
 
     query = request.GET.get('q')
     saved_queries = UserQuery.objects.filter(query=query)
