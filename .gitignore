@@ -1,3 +1,6 @@
 .venv/
 __pycache__/
 front/
+*.pyc
+db.sqlite3
+
