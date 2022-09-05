@@ -4,8 +4,11 @@
 <html lang="en" data-theme="dark">
     <head en="UTF-8">
         <meta charset="UTF-8">
-        <title>{{ query }} - Patent Metasearch</title> <!-- {{ object_list }} - -->
+        <title>{{ query }} - Patent Metasearch</title>
         <link rel="stylesheet" type="text/css" href="{% static 'css/search_results.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="topbar">
@@ -30,7 +33,7 @@
             <div class="search-result">
                 <h1 class="title">
                     <a href="{{ result.link|link_wrapper:result.search_engine|second_wrapper:query }}">
-                    {{ result.title }}</a>
+                    {{ result.title|truncatewords:10 }}</a>
                 </h1>
                 <p class="search-engine">{{ result.search_engine }}</p>
                 <p class="description">{{ result.description|truncatewords:50 }}</p>
