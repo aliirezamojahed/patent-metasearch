@@ -85,7 +85,7 @@ def search_results(request):
         )
         driver.get('https://patentscope.wipo.int/')
         search_input = driver.find_element(
-            by=By.ID, 
+            by=By.NAME, 
             value='simpleSearchForm:fpSearch:input',
         )
         search_input.send_keys(query, Keys.ENTER)
@@ -113,7 +113,7 @@ def search_results(request):
     # CHROMEDRIVER_PATH = 'C:/SeleniumDrivers/chromedriver.exe'
     options = Options()  
     # options.binary_location = os.environ.get('GOOGLE_CHROME_BIN')
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     # options.add_argument('--disable-gpu')
     # options.add_argument('--no-sandbox')
     # options.add_argument('--remote-debugging-port=9222')
