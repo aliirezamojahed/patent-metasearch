@@ -1,55 +1,13 @@
 # patent-metasearch
 Gathering patents information from google patent, lens, and patentscope and integrating them
 
-## ✨ Start the app in Docker
-
-> **Step 1** - Download the code from the GH repository (using `GIT`) 
-
-```bash
-$ # Get the code
-$ git clone https://github.com/app-generator/django-pixel.git
-$ cd django-pixel
-```
-
-<br />
-
-> **Step 2** - Edit `.env` and remove or comment all `DB_*` settings (`DB_ENGINE=...`). This will activate the `SQLite` persistance. 
-
-```txt
-DEBUG=True
-
-# Deployment SERVER address
-SERVER=.appseed.us
-
-# For MySql Persistence
-# DB_ENGINE=mysql            <-- REMOVE or comment for Docker
-# DB_NAME=appseed_db         <-- REMOVE or comment for Docker  
-# DB_HOST=localhost          <-- REMOVE or comment for Docker 
-# DB_PORT=3306               <-- REMOVE or comment for Docker
-# DB_USERNAME=appseed_db_usr <-- REMOVE or comment for Docker
-# DB_PASS=<STRONG_PASS>      <-- REMOVE or comment for Docker
-
-```
-
-<br />
-
-> **Step 3** - Start the APP in `Docker`
-
-```bash
-$ docker-compose up --build 
-```
-
-Visit `http://localhost:5085` in your browser. The app should be up & running.
-
-<br />
-
-## ✨ How to use it
+## ✨ Start the app in Virtual Environment
 
 > Download the code 
 
 ```bash
 $ # Get the code
-$ git clone https://github.com/app-generator/django-pixel.git
+$ git clone https://github.com/aliirezamojahed/patent-metasearch
 $ cd django-pixel
 ```
 
