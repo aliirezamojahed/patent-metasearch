@@ -18,8 +18,8 @@ $ cd django-pixel
 > Install modules via `VENV`  
 
 ```bash
-$ virtualenv env
-$ source env/bin/activate
+$ virtualenv venv
+$ source venv/bin/activate
 $ pip3 install -r requirements.txt
 ```
 
@@ -49,8 +49,8 @@ At this point, the app runs at `http://127.0.0.1:8000/`.
 > Install modules via `VENV` (windows) 
 
 ```
-$ virtualenv env
-$ .\env\Scripts\activate
+$ virtualenv venv
+$ .\venv\Scripts\activate
 $ pip3 install -r requirements.txt
 ```
 
